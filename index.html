@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jannatul Islam Asa — Portfolio</title>
+  <meta name="description" content="Portfolio of Jannatul Islam Asa — BSc CSE student. Created from uploaded CV." />
+
+  <!-- Google font (optional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#06b6d4;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071128 0%, #07162a 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:32px auto;
+      padding:28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+
+    .avatar{
+      width:100px;height:100px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;
+      color:#041014;flex-shrink:0;
+      box-shadow:0 6px 18px rgba(3,6,23,0.6);
+    }
+
+    h1{margin:0;font-size:20px}
+    .sub{color:var(--muted);font-size:13px;margin-top:6px}
+
+    .top-right{
+      margin-left:auto;text-align:right;font-size:14px;
+    }
+
+    nav{margin-top:18px;display:flex;gap:8px;flex-wrap:wrap}
+    .pill{background:var(--glass);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+    .pill:hover{transform:translateY(-2px);cursor:pointer}
+
+    main{display:grid;grid-template-columns:1fr 340px;gap:22px;margin-top:22px}
+    @media (max-width:900px){ main{grid-template-columns:1fr} .top-right{text-align:left;margin-left:0} }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+    }
+
+    .section-title{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+    .section-title h2{margin:0;font-size:16px}
+    .section-title .line{height:2px;background:linear-gradient(90deg,var(--accent),#7c3aed);flex:1;border-radius:2px}
+
+    .about p{margin:0;color:var(--muted)}
+    .list{display:flex;flex-direction:column;gap:10px}
+    .edu-item{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+    .edu-item small{color:var(--muted)}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{background:rgba(255,255,255,0.03);padding:6px 9px;border-radius:8px;font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    @media (max-width:700px){ .projects{grid-template-columns:1fr} }
+
+    .project-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border:1px solid rgba(255,255,255,0.02)}
+    .project-card h3{margin:0;font-size:15px}
+    .project-card p{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+    .contact-row{display:flex;flex-direction:column;gap:8px}
+    .contact-row a{color:var(--accent);text-decoration:none}
+    .copy-btn{margin-left:8px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);cursor:pointer}
+
+    footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
+
+    /* small utilities */
+    .muted{color:var(--muted);font-size:13px}
+    .row{display:flex;gap:12px;align-items:center}
+    .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(1,6,12,0.6);display:none;align-items:center;justify-content:center;padding:20px}
+    .modal{background:#061224;padding:20px;border-radius:10px;max-width:680px;width:100%;border:1px solid rgba(255,255,255,0.04)}
+    .close{background:transparent;border:0;color:var(--muted);font-size:18px;cursor:pointer}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <header>
+      <div class="avatar" aria-hidden="true">JA</div>
+      <div>
+        <h1>Jannatul Islam Asa</h1>
+        <div class="sub">BSc. in CSE — Dafodil International University · CGPA: 3.10</div>
+        <div class="muted">Detail-oriented AI / ML enthusiast · Data Science · Full-stack basics</div>
+      </div>
+
+      <div class="top-right">
+        <div class="muted">Manikganj, Dhaka — Bangladeshi</div>
+        <div style="margin-top:8px">
+          <span class="tag">01310264137</span>
+          <span class="tag" style="margin-left:8px">jannatul.islam1772@gmail.com</span>
+        </div>
+      </div>
+    </header>
+
+    <nav aria-label="Quick actions">
+      <div class="pill" onclick="scrollToId('about')">About</div>
+      <div class="pill" onclick="scrollToId('education')">Education</div>
+      <div class="pill" onclick="scrollToId('skills')">Skills</div>
+      <div class="pill" onclick="scrollToId('projects')">Projects</div>
+      <div class="pill" onclick="scrollToId('contact')">Contact</div>
+    </nav>
+
+    <main>
+      <section>
+        <article class="card about" id="about" aria-labelledby="about-title">
+          <div class="section-title"><h2 id="about-title">Profile</h2><div class="line"></div></div>
+          <p>
+            Detail-oriented and forward-thinking IT professional specializing in Artificial Intelligence and Machine Learning.
+            Skilled in developing, optimizing, and deploying data-driven models, with a strong understanding of algorithms, statistical methods, and automation techniques.
+            Experienced in building scalable solutions, working with cross-functional teams, and applying analytical thinking to solve complex technical problems.
+          </p>
+
+          <div style="height:12px"></div>
+
+          <div class="section-title"><h2>Education</h2><div class="line"></div></div>
+
+          <div class="list" id="education">
+            <div class="edu-item">
+              <strong>BSc. in CSE</strong><br>
+              Dafodil International University — 2022 – Present<br>
+              <small class="muted">CGPA: 3.35</small>
+            </div>
+            <div class="edu-item">
+              <strong>HSC</strong><br>
+              Singair Degree College<br>
+              <small class="muted">GPA: 4.50</small>
+            </div>
+            <div class="edu-item">
+              <strong>SSC</strong><br>
+              Shahorail High School<br>
+              <small class="muted">GPA: 4.11</small>
+            </div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="section-title"><h2 id="skills">Skills</h2><div class="line"></div></div>
+          <div class="skills" aria-label="Skills list">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">PHP</div>
+            <div class="skill">C#</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Database Management</div>
+            <div class="skill">Data Science</div>
+            <div class="skill">ML / DM</div>
+          </div>
+
+          <div style="height:14px"></div>
+
+          <div class="section-title"><h2 id="projects">Projects</h2><div class="line"></div></div>
+
+          <div class="projects" aria-live="polite">
+            <div class="project-card">
+              <h3>TOP (Take Outing Pack)</h3>
+              <p>Travel/outing support project (brief description — edit as needed).</p>
+              <div style="margin-top:8px"><button class="pill" onclick="openModal('TOP (Take Outing Pack)','Detailed description about TOP — add your role, tech, link, and screenshots.')">Details</button></div>
+            </div>
+
+            <div class="project-card">
+              <h3>Smart Travel Guide based on AI</h3>
+              <p>AI-based travel recommendation system (short summary).</p>
+              <div style="margin-top:8px"><button class="pill" onclick="openModal('Smart Travel Guide','Add tech stack, dataset, model details, link to repo or demo.')">Details</button></div>
+            </div>
+
+            <div class="project-card">
+              <h3>FLAFI (Flavour Finders)</h3>
+              <p>Food review & traditional food discovery website.</p>
+              <div style="margin-top:8px"><button class="pill" onclick="openModal('FLAFI','Explain your part (frontend/backend), languages used, and any demo links.')">Details</button></div>
+            </div>
+
+            <div class="project-card">
+              <h3>NavSite</h3>
+              <p>Smart glass for blind people — IoT obstacle detection with GPS and alerts.</p>
+              <div style="margin-top:8px"><button class="pill" onclick="openModal('NavSite','Hardware & software details, sensors used, and outcomes.')">Details</button></div>
+            </div>
+
+            <div class="project-card">
+              <h3>Project Adhar</h3>
+              <p>Synthetic data generator by AI.</p>
+              <div style="margin-top:8px"><button class="pill" onclick="openModal('Project Adhar','Methodology and datasets used; share links if available.')">Details</button></div>
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+      <aside>
+        <div class="card">
+          <div class="section-title"><h2>Contact</h2><div class="line"></div></div>
+
+          <div class="contact-row">
+            <div class="row">
+              <strong>Phone:</strong>
+              <div class="muted">01310264137</div>
+              <button class="copy-btn" onclick="copyToClipboard('01310264137')">Copy</button>
+            </div>
+
+            <div class="row">
+              <strong>Email:</strong>
+              <div class="muted" id="emailText">jannatul.islam1772@gmail.com</div>
+              <button class="copy-btn" onclick="copyToClipboard('jannatul.islam1772@gmail.com')">Copy</button>
+            </div>
+
+            <div class="row">
+              <strong>Location:</strong>
+              <div class="muted">Manikganj, Dhaka</div>
+            </div>
+
+            <div class="row" style="margin-top:8px">
+              <strong>Languages:</strong>
+              <div class="muted">Bangla (Native), English (Conversational), Hindi (Conversational), Urdu (Basic)</div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="row">
+              <a class="pill" id="linkedinLink" href="#" target="_blank" rel="noopener">LinkedIn (update link)</a>
+              <a class="pill" href="#" onclick="event.preventDefault(); openContactForm()">Hire / Message</a>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <div class="section-title"><h2>Quick CV facts</h2><div class="line"></div></div>
+          <div class="muted">
+            <ul style="padding-left:18px;margin:0">
+              <li>BSc CSE — Dafodil International University. :contentReference[oaicite:1]{index=1}</li>
+              <li>Skills and projects summarized from uploaded CV.</li>
+              <li>Update links, screenshots and descriptions for stronger portfolio.</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>Built from uploaded CV. You can edit content directly in this file.</div>
+      <div style="margin-top:6px;color:var(--muted)">Tip: replace avatar with your photo and add project demo links / GitHub repos.</div>
+    </footer>
+  </div>
+
+  <!-- Modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" id="modal">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <strong id="modalTitle">Title</strong>
+        <button class="close" onclick="closeModal()">✕</button>
+      </div>
+      <div id="modalBody" style="margin-top:12px;color:var(--muted)">Details...</div>
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll helper
+    function scrollToId(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+
+    // Copy to clipboard with feedback
+    function copyToClipboard(text){
+      if(!navigator.clipboard) {
+        alert('Clipboard not available; please copy manually: ' + text);
+        return;
+      }
+      navigator.clipboard.writeText(text).then(function(){
+        const prev = document.activeElement;
+        alert('Copied: ' + text);
+        if(prev) prev.blur();
+      }, function(){
+        alert('Copy failed — please copy manually: ' + text);
+      });
+    }
+
+    // Modal handlers for project details
+    function openModal(title, body){
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalBody').textContent = body;
+      const b = document.getElementById('modalBackdrop');
+      b.style.display = 'flex';
+    }
+    function closeModal(){
+      document.getElementById('modalBackdrop').style.display = 'none';
+    }
+
+    // Quick contact action (just a placeholder)
+    function openContactForm(){
+      alert('You can add a contact form action here (send email, open mailto:, or link to a form).');
+    }
+
+    // Small data-cleanup: fill LinkedIn if you paste full URL
+    // Note: CV-provided LinkedIn link was truncated in the uploaded file; update it below:
+    const linkedInHref = "#"; // <-- replace "#" with your full LinkedIn URL
+    document.getElementById('linkedinLink').href = linkedInHref;
+
+    // Accessibility: close modal with escape
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
